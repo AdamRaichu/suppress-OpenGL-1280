@@ -15,7 +15,12 @@
   "license": "GPL-3.0-or-later",
   "environment": "client",
   "entrypoints": {
-    "client": []
+    "client": [
+      "io.github.adamraichu.suppressopengl1280.ModInitClass"
+    ],
+    "modmenu": [
+      "io.github.adamraichu.suppressopengl1280.ModMenuIntegration"
+    ]
   },
   "mixins": [
     "suppressopengl1280.mixins.json"
@@ -23,5 +28,8 @@
   "depends": {
     "fabricloader": ">=0.14.18",
     "minecraft": ">=1.19.4"
+  },
+  "recommends": {
+    "modmenu": ">=7.0.0"
   }
 }
