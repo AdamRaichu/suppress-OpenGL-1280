@@ -1,0 +1,7 @@
+{
+  "text.autoconfig.suppressopengl1280.title": "Suppress OpenGL Error 1280",
+  "text.autoconfig.suppressopengl1280.option.suppress1280": "Suppress error 1280",
+  "text.autoconfig.suppressopengl1280.option.suppress1280.@Tooltip": "Known causes: Overwolf FPS Overlay",
+  "text.autoconfig.suppressopengl1280.option.suppress1281": "Suppress error 1281",
+  "text.autoconfig.suppressopengl1280.option.suppress1282": "Suppress error 1282"
+}
