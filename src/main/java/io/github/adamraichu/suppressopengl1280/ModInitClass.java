@@ -11,6 +11,6 @@ import net.fabricmc.api.Environment;
 public class ModInitClass implements ClientModInitializer {
   @Override
   public void onInitializeClient() {
-    AutoConfig.register(ConfigOptions.class, GsonConfigSerializer::new)
+    AutoConfig.register(ConfigOptions.class, GsonConfigSerializer::new);
   }
 }

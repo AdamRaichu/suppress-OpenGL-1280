@@ -31,7 +31,7 @@ public abstract class GlDebugMixin {
         ci.cancel();
       } else {
         LOGGER.info("This mod has been configured to suppress OpenGL error 1280.");
-        LOGGER.info("You can change that at any time via cloth config.")
+        LOGGER.info("You can change that at any time via cloth config.");
         LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
         hasPostedMessage1280 = true;
       }
@@ -41,7 +41,7 @@ public abstract class GlDebugMixin {
         ci.cancel();
       } else {
         LOGGER.info("This mod has been configured to suppress OpenGL error 1281.");
-        LOGGER.info("You can change that at any time via cloth config.")
+        LOGGER.info("You can change that at any time via cloth config.");
         LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
         hasPostedMessage1281 = true;
       }
@@ -51,7 +51,7 @@ public abstract class GlDebugMixin {
         ci.cancel();
       } else {
         LOGGER.info("This mod has been configured to suppress OpenGL error 1282.");
-        LOGGER.info("You can change that at any time via cloth config.")
+        LOGGER.info("You can change that at any time via cloth config.");
         LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
         hasPostedMessage1282 = true;
       }
