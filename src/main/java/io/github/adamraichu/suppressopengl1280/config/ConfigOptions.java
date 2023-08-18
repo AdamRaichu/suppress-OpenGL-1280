@@ -6,7 +6,7 @@ import me.shedaniel.autoconfig.annotation.ConfigEntry;
 
 @Config(name = "suppressopengl1280")
 public class ConfigOptions implements ConfigData {
-  @ConfigEntry.Gui.Tooltip()
+  @ConfigEntry.Gui.Tooltip(count = 2)
   public boolean suppress1280 = true;
 
   // @ConfigEntry.Gui.Tooltip()
