@@ -1,5 +1,8 @@
 package io.github.adamraichu.suppressopengl1280.mixin;
 
+import io.github.adamraichu.suppressopengl1280.config.ConfigOptions;
+import me.shedaniel.autoconfig.AutoConfig;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +14,9 @@ import net.minecraft.client.gl.GlDebug;
 
 @Mixin(GlDebug.class)
 public abstract class GlDebugMixin {
-  private static boolean hasPostedMessage = false;
+  private static boolean hasPostedMessage1280 = false;
+  private static boolean hasPostedMessage1281 = false;
+  private static boolean hasPostedMessage1282 = false;
 
   private static Logger LOGGER = LoggerFactory.getLogger("Suppress OpenGL Error 1280");
 
@@ -19,16 +24,37 @@ public abstract class GlDebugMixin {
   private static void suppressMessage(int source, int type, int id, int severity, int messageLength, long message,
       long l,
       CallbackInfo ci) {
-    if (!(id == 1280)) {
-      return;
+    ConfigOptions config = AutoConfig.getConfigHolder(ConfigOptions.class).getConfig();
+
+    if (id == 1280 && config.suppress1280) {
+      if (hasPostedMessage1280) {
+        ci.cancel();
+      } else {
+        LOGGER.info("This mod has been configured to suppress OpenGL error 1280.");
+        LOGGER.info("You can change that at any time via cloth config.");
+        LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
+        hasPostedMessage1280 = true;
+      }
     }
-    if (hasPostedMessage) {
-      ci.cancel();
-    } else {
-      LOGGER.info("OpenGL error 1280 (GL_INVALID_ENUM) is known to spam several times per second.");
-      LOGGER.info("This is the last time (for this run) that an error with this id will be logged.");
-      LOGGER.info("Go to https://github.com/AdamRaichu/suppress-opengl-1280/wiki for more info about this error.");
-      hasPostedMessage = true;
+    if (id == 1281 && config.suppress1281) {
+      if (hasPostedMessage1281) {
+        ci.cancel();
+      } else {
+        LOGGER.info("This mod has been configured to suppress OpenGL error 1281.");
+        LOGGER.info("You can change that at any time via cloth config.");
+        LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
+        hasPostedMessage1281 = true;
+      }
+    }
+    if (id == 1282 && config.suppress1282) {
+      if (hasPostedMessage1282) {
+        ci.cancel();
+      } else {
+        LOGGER.info("This mod has been configured to suppress OpenGL error 1282.");
+        LOGGER.info("You can change that at any time via cloth config.");
+        LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
+        hasPostedMessage1282 = true;
+      }
     }
   }
 }
