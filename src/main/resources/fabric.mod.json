@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "id": "suppressopengl1280",
   "version": "$version",
-  "name": "Suppress OpenGL Error 128(0-2)",
-  "description": "Stop the spam of OpenGL error 1280 in the log.",
+  "name": "Suppress OpenGL Errors",
+  "description": "Stop the spam of OpenGL errors in the log.",
   "authors": [
     "AdamRaichu"
   ],

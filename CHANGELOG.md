@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0
+
+Suppress OpenGL error #2.
+
+Thank you [@nijahplays](https://github.com/AdamRaichu/suppress-OpenGL-1280/issues/3) for requesting suppression for 2.
+
+Change mod name to `Suppress OpenGL Errors`.
+
 ## 1.1.1
 
 Change mod name to `Suppress OpenGL Error 128(0-2)`.
