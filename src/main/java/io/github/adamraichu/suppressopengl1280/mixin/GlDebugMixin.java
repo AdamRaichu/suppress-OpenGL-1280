@@ -17,6 +17,7 @@ public abstract class GlDebugMixin {
   private static boolean hasPostedMessage1280 = false;
   private static boolean hasPostedMessage1281 = false;
   private static boolean hasPostedMessage1282 = false;
+  private static boolean hasPostedMessage2 = false;
 
   private static Logger LOGGER = LoggerFactory.getLogger("Suppress OpenGL Error 1280");
 
@@ -54,6 +55,16 @@ public abstract class GlDebugMixin {
         LOGGER.info("You can change that at any time via cloth config.");
         LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
         hasPostedMessage1282 = true;
+      }
+    }
+    if (id == 2 && config.suppress2) {
+      if (hasPostedMessage2) {
+        ci.cancel();
+      } else {
+        LOGGER.info("This mod has been configured to suppress OpenGL error 2.");
+        LOGGER.info("You can change that at any time via cloth config.");
+        LOGGER.info("This error will not be shown again for this run of Minecraft unless you change the config.");
+        hasPostedMessage2 = true;
       }
     }
   }
