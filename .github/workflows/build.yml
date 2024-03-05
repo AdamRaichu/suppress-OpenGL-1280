@@ -1,6 +1,13 @@
 name: build
 on:
   workflow_dispatch:
+    inputs:
+      changes:
+        type: string
+        required: true
+        description: "Description to show in changelog"
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,12 +25,41 @@ jobs:
         with:
           java-version: 17
           distribution: "microsoft"
+      - name: cache loom
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.gradle/caches/fabric-loom
+            .gradle/loom-cache
+            build/loom-cache
+            **/build/loom-cache
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: build
         run: ./gradlew build
-      - name: capture build artifacts
-        uses: actions/upload-artifact@v3
+      - name: export gradle.properties as env vars
+        run: |
+          export `sed -e '/^#/d' -e '/^org/d' gradle.properties`
+          echo "mod_version=$mod_version" >> $GITHUB_ENV
+          echo "minecraft_version=$minecraft_version" >> $GITHUB_ENV
+      - name: Publich to Modrinth and CurseForge
+        uses: Kir-Antipov/mc-publish@v3.3
         with:
-          name: Mod Files (Fabric)
-          path: build/libs/
+          modrinth-id: 2U4cBE7v
+          modrinth-token: ${{ secrets.MODRINTH_TOKEN }}
+          modrinth-version: "${{ env.mod_version }}.${{ env.minecraft_version }}"
+
+          curseforge-id: 965883
+          curseforge-token: ${{ secrets.CURSEFORGE_TOKEN }}
+
+          github-tag: v${{ env.mod_version }}-${{ env.minecraft_version }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+          name: "[${{env.mod_loader}} ${{env.minecraft_version}}] ${{env.mod_version}}"
+          version: ${{ env.mod_version }}
+          version-type: release
+
+          loaders: fabric
+          changelog: ${{ inputs.changes}}
