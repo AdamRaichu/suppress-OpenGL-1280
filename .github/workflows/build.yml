@@ -61,5 +61,5 @@ jobs:
           version: ${{ env.mod_version }}
           version-type: release
 
-          loaders: fabric
+          loaders: ${{env.mod_loader}}
           changelog: ${{ inputs.changes}}
