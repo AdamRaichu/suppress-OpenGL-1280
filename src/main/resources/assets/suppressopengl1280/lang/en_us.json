@@ -11,7 +11,7 @@
   "text.autoconfig.suppressopengl1280.option.suppress1282.@Tooltip[0]": "Error details: GL_INVALID_OPERATION",
   "text.autoconfig.suppressopengl1280.option.suppress1282.@Tooltip[1]": "Known causes: Outdated graphics card, outdated OptiFine, missing opengl32.dll file, etc.",
   "text.autoconfig.suppressopengl1280.option.suppress1282.@Tooltip[2]": "Do a web search for 'GL_INVALID_OPERATION Minecraft' to find other causes; there are a lot.",
-  "text.autoconfig.suppressopengl1280.option.suppress2": "Suppress error 1282",
+  "text.autoconfig.suppressopengl1280.option.suppress2": "Suppress error 2",
   "text.autoconfig.suppressopengl1280.option.suppress2.@Tooltip[0]": "Error details: GL_INVALID_OPERATION",
   "text.autoconfig.suppressopengl1280.option.suppress2.@Tooltip[1]": "Known causes: Blur (mod)"
 }

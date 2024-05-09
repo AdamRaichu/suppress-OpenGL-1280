@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+Fix the error in the language files which caused error #2 to show as error #1282 in the config files.
+
 ## 1.2.0
 
 Suppress OpenGL error #2.
