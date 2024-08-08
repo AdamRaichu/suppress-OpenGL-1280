@@ -19,13 +19,17 @@ public abstract class GlDebugMixin {
   private static boolean hasPostedMessage1282 = false;
   private static boolean hasPostedMessage2 = false;
 
-  private static Logger LOGGER = LoggerFactory.getLogger("Suppress OpenGL Error 1280");
+  private static Logger LOGGER = LoggerFactory.getLogger("Suppress OpenGL Error 1280 (GlDebug)");
 
   @Inject(at = @At(value = "HEAD"), method = "info(IIIIIJJ)V", cancellable = true)
   private static void suppressMessage(int source, int type, int id, int severity, int messageLength, long message,
       long l,
       CallbackInfo ci) {
     ConfigOptions config = AutoConfig.getConfigHolder(ConfigOptions.class).getConfig();
+
+    if (config.suppressAll) {
+      ci.cancel();
+    }
 
     if (id == 1280 && config.suppress1280) {
       if (hasPostedMessage1280) {

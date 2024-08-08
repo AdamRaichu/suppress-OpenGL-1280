@@ -1,5 +1,7 @@
 {
-  "text.autoconfig.suppressopengl1280.title": "Suppress OpenGL Error 1280",
+  "text.autoconfig.suppressopengl1280.title": "Suppress OpenGL Errors",
+  "text.autoconfig.suppressopengl1280.option.suppressAll": "Suppress All Errors",
+  "text.autoconfig.suppressopengl1280.option.suppressAll.@Tooltip[0]": "This setting overrides all other settings for this mod.",
   "text.autoconfig.suppressopengl1280.option.suppress1280": "Suppress error 1280",
   "text.autoconfig.suppressopengl1280.option.suppress1280.@Tooltip[0]": "Error details: GL_INVALID_ENUM",
   "text.autoconfig.suppressopengl1280.option.suppress1280.@Tooltip[1]": "Known causes: Overwolf FPS Overlay",
@@ -13,5 +15,8 @@
   "text.autoconfig.suppressopengl1280.option.suppress1282.@Tooltip[2]": "Do a web search for 'GL_INVALID_OPERATION Minecraft' to find other causes; there are a lot.",
   "text.autoconfig.suppressopengl1280.option.suppress2": "Suppress error 2",
   "text.autoconfig.suppressopengl1280.option.suppress2.@Tooltip[0]": "Error details: GL_INVALID_OPERATION",
-  "text.autoconfig.suppressopengl1280.option.suppress2.@Tooltip[1]": "Known causes: Blur (mod)"
+  "text.autoconfig.suppressopengl1280.option.suppress2.@Tooltip[1]": "Known causes: Blur (mod)",
+  "text.autoconfig.suppressopengl1280.option.suppress65539": "Suppress error 65539",
+  "text.autoconfig.suppressopengl1280.option.suppress65539.@Tooltip[0]": "Error details: Invalid key -1",
+  "text.autoconfig.suppressopengl1280.option.suppress65539.@Tooltip[1]": "Known causes: Unknown? See issue #4 on GitHub."
 }
