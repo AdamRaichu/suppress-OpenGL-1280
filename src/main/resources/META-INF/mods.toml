@@ -67,12 +67,12 @@ See the wiki (https://github.com/AdamRaichu/suppress-OpenGL-1280/wiki) for more 
     modId="minecraft"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
-    versionRange="[1.18.2,1.19)"
+    versionRange="1.20.1"
     ordering="NONE"
     side="BOTH"
 [[dependencies.suppressopengl1280]]
     modId="cloth_config"
     mandatory=true
-    versionRange="[6,7)"
+    versionRange="[6,)"
     ordering="BEFORE"
     side="CLIENT"
