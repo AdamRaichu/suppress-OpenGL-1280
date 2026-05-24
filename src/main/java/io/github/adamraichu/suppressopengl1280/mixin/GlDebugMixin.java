@@ -1,8 +1,5 @@
 package io.github.adamraichu.suppressopengl1280.mixin;
 
-import io.github.adamraichu.suppressopengl1280.config.ConfigOptions;
-import me.shedaniel.autoconfig.AutoConfig;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,7 +7,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import net.minecraft.client.gl.GlDebug;
+import com.mojang.blaze3d.opengl.GlDebug;
+
+import io.github.adamraichu.suppressopengl1280.config.ConfigOptions;
+import me.shedaniel.autoconfig.AutoConfig;
 
 @Mixin(GlDebug.class)
 public abstract class GlDebugMixin {
@@ -21,7 +21,7 @@ public abstract class GlDebugMixin {
 
   private static Logger LOGGER = LoggerFactory.getLogger("Suppress OpenGL Error 1280");
 
-  @Inject(at = @At(value = "HEAD"), method = "onDebugMessage", cancellable = true)
+  @Inject(at = @At(value = "HEAD"), method = "printDebugLog", cancellable = true)
   private static void suppressMessage(int source, int type, int id, int severity, int messageLength, long message,
       long l,
       CallbackInfo ci) {
